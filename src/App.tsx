@@ -8,7 +8,9 @@ export function App() {
 
   return (
     <>
-      <Heading />
+      <Heading attr='String' attr2={123}>
+        Olá, Mundo!
+      </Heading>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
         explicabo consectetur blanditiis minima deleniti quis doloribus. Cumque
