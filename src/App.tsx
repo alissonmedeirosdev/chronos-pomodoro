@@ -1,22 +1,21 @@
-import { Heading } from './components/Heading';
-
 import './styles/theme.css';
 import './styles/global.css';
 
 export function App() {
-  console.log('Olá Mundo!');
-
   return (
     <>
-      <Heading attr='String' attr2={123}>
-        Olá, Mundo!
-      </Heading>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-        explicabo consectetur blanditiis minima deleniti quis doloribus. Cumque
-        ipsam obcaecati commodi necessitatibus cupiditate, reiciendis, dolor
-        minima esse quae, excepturi quisquam. Consequatur?
-      </p>
+      <div className='container-fluid'>
+        <div className='container'>
+          <div className='content'>
+            <section>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
+              et at quibusdam itaque praesentium sit ratione voluptates sint
+              quas aliquid. Nisi exercitationem et laboriosam? Dolores commodi
+              repellendus laboriosam vero doloremque.
+            </section>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
