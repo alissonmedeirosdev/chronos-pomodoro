@@ -1,20 +1,14 @@
 import './styles/theme.css';
 import './styles/global.css';
+import { Container } from './components/Container';
 
 export function App() {
   return (
     <>
       <div className='container-fluid'>
-        <div className='container'>
-          <div className='content'>
-            <section>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
-              et at quibusdam itaque praesentium sit ratione voluptates sint
-              quas aliquid. Nisi exercitationem et laboriosam? Dolores commodi
-              repellendus laboriosam vero doloremque.
-            </section>
-          </div>
-        </div>
+        <Container>
+          <section>LOGO</section>
+        </Container>
       </div>
     </>
   );
