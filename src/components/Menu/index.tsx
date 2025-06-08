@@ -11,7 +11,7 @@ export function Menu() {
   function handleThemeChange(
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) {
-    event.preventDefault(); // Não faz a ação padrão do link
+    event.preventDefault();
 
     setTheme(prevTheme => {
       const nextTheme = prevTheme == 'dark' ? 'light' : 'dark';
