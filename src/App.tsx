@@ -33,7 +33,7 @@ export function App() {
               <DefaultInput
                 id='meuInput'
                 type='text'
-                labelText='task'
+                labelText='task:'
                 placeholder='Digite algo'
               />
             </div>
