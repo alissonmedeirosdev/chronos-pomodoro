@@ -3,11 +3,11 @@ import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
 import { Menu } from '../../components/Menu';
 
-type MainTempleteProps = {
+type MainTemplateProps = {
   children: React.ReactNode;
 };
 
-export function MainTemplete({ children }: MainTempleteProps) {
+export function MainTemplate({ children }: MainTemplateProps) {
   return (
     <>
       <div className='container-fluid'>
