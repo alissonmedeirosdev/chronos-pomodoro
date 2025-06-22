@@ -2,8 +2,11 @@ import { PlayCircleIcon } from 'lucide-react';
 import { Cycles } from '../Cycles';
 import { DefaultButton } from '../DefaultButton';
 import { DefaultInput } from '../DefaultInput';
+import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 
 export function MainForm() {
+  const { state } = useTaskContext();
+
   return (
     <form className='form' action=''>
       <div className='formRow'>
@@ -16,7 +19,7 @@ export function MainForm() {
       </div>
 
       <div className='formRow'>
-        <p>Nesse ciclo descance por 5 min.</p>
+        <p>Nesse ciclo descance por {state.config.longBreackTime} min.</p>
       </div>
 
       <div className='formRow'>
