@@ -41,7 +41,6 @@ export function Menu() {
 
   return (
     <nav className={styles.menu}>
-      <Heading>{theme}</Heading>
       <a
         className={styles.menuLink}
         href='#'
