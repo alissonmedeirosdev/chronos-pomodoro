@@ -2,13 +2,14 @@ import { PlayCircleIcon } from 'lucide-react';
 import { Cycles } from '../Cycles';
 import { DefaultButton } from '../DefaultButton';
 import { DefaultInput } from '../DefaultInput';
-import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 
 export function MainForm() {
-  const { state } = useTaskContext();
+  function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
 
   return (
-    <form className='form' action=''>
+    <form onSubmit={handleCreateNewTask} className='form' action=''>
       <div className='formRow'>
         <DefaultInput
           id='meuInput'
@@ -19,7 +20,7 @@ export function MainForm() {
       </div>
 
       <div className='formRow'>
-        <p>Nesse ciclo descance por {state.config.longBreackTime} min.</p>
+        <p>Nesse ciclo descance por 5 min.</p>
       </div>
 
       <div className='formRow'>

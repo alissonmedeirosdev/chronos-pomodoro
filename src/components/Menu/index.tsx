@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 import styles from './styles.module.css';
 import { useState, useEffect } from 'react';
-import { Heading } from '../Heading';
 
 type AvailableTheme = 'dark' | 'light';
 
