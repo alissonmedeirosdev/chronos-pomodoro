@@ -5,9 +5,14 @@ import { DefaultInput } from '../DefaultInput';
 import { useRef } from 'react';
 import type { TaskModel } from '../../models/TaskModel';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
+import { getNextCycle } from '../../utils/GetNextCycle';
 
 export function MainForm() {
-  const { setState } = useTaskContext();
+  const { state, setState } = useTaskContext();
+
+  // ciclos
+  const nextCycle = getNextCycle(state.currentCycle);
+  console.log(nextCycle);
 
   // const [taskName, setTaskName] = useState('');
   const taskNameInput = useRef<HTMLInputElement>(null);

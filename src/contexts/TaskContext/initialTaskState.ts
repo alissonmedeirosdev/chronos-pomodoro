@@ -1,7 +1,7 @@
 import type { TaskStateModel } from '../../models/TaskStateModel';
 
 export const initialTaskState: TaskStateModel = {
-  task: [],
+  tasks: [],
   secondsRemaining: 0,
   formattedSecondsRemaining: '25:00',
   activeTask: null,
