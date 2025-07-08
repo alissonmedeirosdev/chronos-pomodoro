@@ -60,9 +60,7 @@ export function MainForm() {
         />
       </div>
 
-      <div className='formRow'>
-        <p>Nesse ciclo descance por 5 min.</p>
-      </div>
+      <div className='formRow'></div>
 
       {state.currentCycle > 0 && (
         <div className='formRow'>
