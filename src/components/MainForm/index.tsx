@@ -43,13 +43,13 @@ export function MainForm() {
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
 
-    const worker = TimerWorkManager.getInstance();
+    // const worker = TimerWorkManager.getInstance();
 
-    worker.postMessage('FAVOR');
+    // worker.postMessage('FAVOR');
 
-    worker.onmessage(event => {
-      console.log('PRINCIPAL recebeu ', event.data);
-    });
+    // worker.onmessage(event => {
+    //   console.log('PRINCIPAL recebeu ', event.data);
+    // });
   }
 
   function handleInterruptTask() {
