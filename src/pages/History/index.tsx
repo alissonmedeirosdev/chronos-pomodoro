@@ -44,7 +44,7 @@ export function History() {
 
     setConfirmClearHistory(false);
 
-    dispatch({ type: TaskActionTypes.RESET_TASK });
+    // dispatch({ type: TaskActionTypes.RESET_TASK });
   }, [confirmClearHistory, dispatch]);
 
   function handleSortTasks({ field }: Pick<SortTasksOptions, 'field'>) {
@@ -68,7 +68,11 @@ export function History() {
 
     showMessage.dismiss();
     showMessage.confirm('Tem certeza?', confirmation => {
-      setConfirmClearHistory(confirmation);
+      // setConfirmClearHistory(confirmation);
+
+      if (confirmation) {
+        dispatch({ type: TaskActionTypes.RESET_TASK });
+      }
     });
   }
 
