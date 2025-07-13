@@ -12,6 +12,7 @@ import { showMessage } from '../../adapters/showMessage';
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
+  const lastTaskName = state.tasks[state.tasks.length - 1]?.name || '';
 
   // ciclos
   const nextCycle = getNextCycle(state.currentCycle);
@@ -71,6 +72,7 @@ export function MainForm() {
           placeholder='Digite algo'
           ref={taskNameInput}
           disabled={!!state.activeTask}
+          defaultValue={lastTaskName} // não é value pq não conseguimos controlar o valor
         />
       </div>
 
