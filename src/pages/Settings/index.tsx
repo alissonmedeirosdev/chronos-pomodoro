@@ -4,7 +4,7 @@ import { DefaultButton } from '../../components/DefaultButton';
 import { DefaultInput } from '../../components/DefaultInput';
 import { Heading } from '../../components/Heading';
 import { MainTemplate } from '../../templetes/MainTemplate';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { showMessage } from '../../adapters/showMessage';
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
@@ -22,6 +22,10 @@ import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 */
 
 export function Settings() {
+  useEffect(() => {
+    document.title = 'Configurações - Chronos Pomodoro';
+  }, []);
+
   const { state, dispatch } = useTaskContext();
   const workTimeInput = useRef<HTMLInputElement | null>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement | null>(null);
