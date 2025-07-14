@@ -7,6 +7,7 @@ import { MainTemplate } from '../../templetes/MainTemplate';
 import { useRef } from 'react';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { showMessage } from '../../adapters/showMessage';
+import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 
 /*
 
@@ -15,10 +16,13 @@ import { showMessage } from '../../adapters/showMessage';
 
   E para inputs que o valor não é controlado não é value e sim defaultValue
 
+  useState e useReducer precisam ter funções puras. Se a função for assincrona ou
+  conter muita lógica está errado
+
 */
 
 export function Settings() {
-  const { state } = useTaskContext();
+  const { state, dispatch } = useTaskContext();
   const workTimeInput = useRef<HTMLInputElement | null>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement | null>(null);
   const longBreakTimeInput = useRef<HTMLInputElement | null>(null);
@@ -29,15 +33,15 @@ export function Settings() {
     showMessage.dismiss();
 
     const formErrors: string[] = [];
-    const worktime = Number(workTimeInput.current?.value);
+    const workTime = Number(workTimeInput.current?.value);
     const shortBreakTime = Number(shortBreakTimeInput.current?.value);
     const longBreakTime = Number(longBreakTimeInput.current?.value);
 
-    if (isNaN(worktime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
+    if (isNaN(workTime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
       formErrors.push('Digite apenas números para TODOS os campos');
     }
 
-    if (worktime < 1 || worktime > 99) {
+    if (workTime < 1 || workTime > 99) {
       formErrors.push('Digite valores entre 1 a 99 para foco');
     }
 
@@ -55,7 +59,17 @@ export function Settings() {
       });
       return;
     }
-    console.log('SALVAR');
+
+    dispatch({
+      type: TaskActionTypes.CHANGE_SETTINGS,
+      payload: {
+        workTime,
+        shortBreakTime,
+        longBreakTime,
+      },
+    });
+
+    showMessage.sucess('Configuraçõs salvas');
   }
 
   return (

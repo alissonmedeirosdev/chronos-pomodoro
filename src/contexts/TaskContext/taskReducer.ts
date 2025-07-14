@@ -68,6 +68,10 @@ export function taskReducer(
         ),
       };
     }
+
+    case TaskActionTypes.CHANGE_SETTINGS: {
+      return { ...state, config: { ...action.payload } };
+    }
   }
 
   // sempre deve retornar o estado, seja ele atualizado ou não
