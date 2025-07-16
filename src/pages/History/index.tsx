@@ -84,7 +84,7 @@ export function History() {
     <MainTemplate>
       <Container>
         <Heading>
-          <span>History</span>
+          <span>Histórico</span>
 
           {hasTasks && (
             <span className={styles.buttonContainer}>
